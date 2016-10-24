@@ -12,12 +12,15 @@
 	font-style: normal;
 }
 
+@import "partials/font-awesome.scss";
 
-$color1: #cd9e50;
-$color2: #d48421;
-$color3: #8d642c;
-$color4: #69481d;
-$color5: #3c2209;
+
+$color1: #f6f4ee;
+$color2: #dcd2c9;
+$color3: #cbab7f;
+$color4: #967c61;
+$color5: #5d432c;
+$color6: #050001;
 
 
 
@@ -27,6 +30,32 @@ $color5: #3c2209;
     font-family: "Habibi", Verdana, sans-serif;
     font-size: 16px;
 }
+
+body {
+    
+    background-image: url('../images/south-africa-1082097_1920.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    
+}
+
+
+
+.hidden {
+    
+    display: none;
+    
+}
+
+.shown {
+    
+    display: inline-block;
+    
+}
+
+
 
 .container {
     
@@ -38,6 +67,26 @@ $color5: #3c2209;
 
 .headerclass {
     
-    height: 150px;
-    background-color: $color1;
+    height: 82px;
+    width: 100%;
+    background-color: $color6;
+    opacity: 0.6;
+    position: fixed;
 }
+
+
+.section1 {
+    
+    padding-top: 82px;
+}
+
+
+p {
+    
+    color: $color2;
+}
+
+i {
+    color: $color2;
+}
+
