@@ -69,7 +69,8 @@ $(document).ready(function () {
 
     navbutton.on('click', function(){
         
-        console.log("elo");
+        navaltlist.toggleClass('hidden');
+        navaltlist.toggleClass('shown');
     })
 
 });
