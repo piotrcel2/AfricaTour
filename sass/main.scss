@@ -55,13 +55,19 @@ body {
 }
 
 
+.shownnblock {
+    
+    display: block;
+}
+
+
 
 .container {
     
     max-width: 1060px;
     margin-left: auto;
     margin-right: auto;
-    display: flex;
+    
 }
 
 .headerout {
@@ -91,7 +97,7 @@ body {
     height: 100%;
     justify-content: space-between;
     align-items: center;
-    
+    display: flex;
 }
 
 
@@ -198,13 +204,6 @@ body {
 
 
 
-
-
-
-
-
-
-
 .breaksmall {
     
     padding-top: 56px;
@@ -254,15 +253,105 @@ body {
 
 .breaklinesmall {
     
-    height: 16px;
+    height: 12px;
 	
 }
 
 .breaklinebig {
     
-    height: 24px;
+    height: 16px;
 	
 }
+
+
+.section1 {
+    
+    display: flex;
+}
+
+.section1small {
+    
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section1big {
+    
+    margin-top: 40px;
+    justify-content: space-around;
+
+}
+
+
+
+
+
+.countrylist {
+    width:200px;
+    height:100px;
+    background-color: aqua;
+}
+
+.countrylistsmall {
+    
+}
+    
+.countrylistbig {
+    
+}
+
+
+.picboxout {
+    width:480px;
+    height:100px;
+    background-color: forestgreen;
+   
+}
+
+
+.picboxoutsmall {
+    
+    
+}
+
+.picboxoutbig {
+    
+    
+}
+
+
+
+
+
+.pickboxin {
+    
+    
+    
+}
+
+.picboxinsmall {
+    
+    
+}
+
+.picboxinbig {
+    
+    
+}
+
+
+
+
+
+.pickboxnav {
+    
+    
+}
+
+
+
+
 
 
 
@@ -294,7 +383,7 @@ a:active {
 
 
 
-i {
+fa-bars {
     color: $color2;
 }
 

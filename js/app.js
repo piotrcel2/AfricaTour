@@ -9,8 +9,11 @@ $(document).ready(function () {
     var navbutton = $('.fa-bars');
     var navaltlist = $('.navaltlist');
     var breakline = $('.breakline');
+    var section1 = $('.section1');
+    var countrylist = $('.countrylist');
+    var picboxout = $('.picboxout');
+    var picboxin = $('.picboxin');
     
-
 
     function match_media_with_listener() {
 
@@ -42,7 +45,14 @@ $(document).ready(function () {
                 breakpattern.removeClass('patternbig');
                 breakline.addClass('breaklinesmall');
                 breakline.removeClass('breaklinebig');
-        
+                section1.addClass('section1small');
+                section1.removeClass('section1big');
+                countrylist.addClass('countrylistsmall');
+                countrylist.removeClass('countrylistbig');
+                picboxout.addClass('picboxoutsmall');
+                picboxout.removeClass('picboxoutbig');
+                picboxin.addClass('picboxinsmall');
+                picboxin.removeClass('picboxinbig');
                 
             } else {
                 
@@ -65,6 +75,14 @@ $(document).ready(function () {
                 breakpattern.removeClass('patternsmall');
                 breakline.addClass('breaklinebig');
                 breakline.removeClass('breaklinesmall');
+                section1.addClass('section1big');
+                section1.removeClass('section1small');
+                countrylist.addClass('countrylistbig');
+                countrylist.removeClass('countrylistsmall');
+                picboxout.addClass('picboxoutbig');
+                picboxout.removeClass('picboxoutsmall');
+                picboxin.addClass('picboxinbig');
+                picboxin.removeClass('picboxinsmall');
                 
                 
                 
@@ -84,4 +102,7 @@ $(document).ready(function () {
         navaltlist.toggleClass('shown');
     })
 
+    
+    
+    
 });
