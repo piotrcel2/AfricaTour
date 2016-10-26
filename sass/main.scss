@@ -68,7 +68,7 @@ body {
     
     width: 100%;
     background-color: $color6;
-    opacity: 0.8;
+    opacity: 0.9;
     position: fixed;
 }
 
@@ -167,21 +167,23 @@ body {
     
     list-style-type: none;
     width: 100%;
+    position: fixed;
     
     li {
         
         font-size: 20px;
         background-color: $color6;
-        border-top: 1px solid $color5;
-        opacity: 0.6;
+        border-bottom: 1px solid $color5;
+        opacity: 0.9;
         color: $color2;
         padding: 5px 10px 5px 10px;
+        top: 10px;
         
         a:hover {
         
         color: $color3;
         
-    }
+        }
         
         
     }
@@ -205,13 +207,63 @@ body {
 
 .breaksmall {
     
-    padding-top: 40px;
+    padding-top: 56px;
 }
 
 .breakbig {
     
-    padding-top: 82px;
+    padding-top: 106px;
 }
+
+
+
+
+
+.breakpattern {
+    
+    background-image: url('../images/africanpattern.jpg');
+    background-size: contain;
+    background-repeat: repeat-x;
+    position: fixed;
+    width: 100%;
+    
+}
+
+.patternsmall {
+	height: 16px;
+    top: 40px;
+}
+
+.patternbig {
+    height: 24px;
+    top: 82px;
+}
+
+.breakline {
+    
+    width: 100%;
+    position: fixed;
+    background-image:
+    -webkit-linear-gradient(rgba(5, 0, 1, 0.9) 0%, rgba(5, 0, 1, 0) 100%);
+    background-image:
+    -o-linear-gradient(rgba(5, 0, 1, 0.9) 0%, rgba(5, 0, 1, 0) 100%);
+    background-image:
+    linear-gradient(rgba(5, 0, 1, 0.9) 0%, rgba(5, 0, 1, 0) 100%);
+    
+}
+
+.breaklinesmall {
+    
+    height: 16px;
+	
+}
+
+.breaklinebig {
+    
+    height: 24px;
+	
+}
+
 
 
 

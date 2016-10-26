@@ -4,9 +4,12 @@ $(document).ready(function () {
     var logo = $('.logo');
     var headerout = $('.headerout');
     var breaksection = $('.breaksection');
+    var breakpattern = $('.breakpattern');
     var navlist = $('.navlist');
     var navbutton = $('.fa-bars');
     var navaltlist = $('.navaltlist');
+    var breakline = $('.breakline');
+    
 
 
     function match_media_with_listener() {
@@ -35,6 +38,10 @@ $(document).ready(function () {
                 navlist.removeClass('shown');
                 navbutton.addClass('shown');
                 navbutton.removeClass('hidden');
+                breakpattern.addClass('patternsmall');
+                breakpattern.removeClass('patternbig');
+                breakline.addClass('breaklinesmall');
+                breakline.removeClass('breaklinebig');
         
                 
             } else {
@@ -54,6 +61,10 @@ $(document).ready(function () {
                 navbutton.removeClass('shown');
                 navaltlist.addClass('hidden');
                 navaltlist.removeClass('shown');
+                breakpattern.addClass('patternbig');
+                breakpattern.removeClass('patternsmall');
+                breakline.addClass('breaklinebig');
+                breakline.removeClass('breaklinesmall');
                 
                 
                 
