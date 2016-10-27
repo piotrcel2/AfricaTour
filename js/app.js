@@ -13,14 +13,15 @@ $(document).ready(function () {
     var countrylist = $('.countrylist');
     var picboxout = $('.picboxout');
     var picboxin = $('.picboxin');
-    
+    var imgs = $('.imgclass');
+    var countryname = $('.countryelement');
 
     function match_media_with_listener() {
 
         var mq = window.matchMedia("(max-width: 768px)");
 
         mq.addListener(WidthChange);
-        WidthChange(mq); // media query change
+        WidthChange(mq); // zmiana szerokości ekranu
 
 
         function WidthChange(mediaQuery) {
@@ -29,7 +30,6 @@ $(document).ready(function () {
             if (mediaQuery.matches) {
                 
                 // MAŁE OKNO!!!!!
-                console.log("małe okno");
                 
                 logo.addClass('logosmall');
                 logo.removeClass('logobig');
@@ -53,11 +53,12 @@ $(document).ready(function () {
                 picboxout.removeClass('picboxoutbig');
                 picboxin.addClass('picboxinsmall');
                 picboxin.removeClass('picboxinbig');
+                imgs.addClass('imgclasssmall');
+                imgs.removeClass('imgclassbig');
                 
             } else {
                 
                 // DUŻE OKNO!!!!!
-                console.log("duże okno");
                 
                 logo.addClass('logobig');
                 logo.removeClass('logosmall');
@@ -83,6 +84,8 @@ $(document).ready(function () {
                 picboxout.removeClass('picboxoutsmall');
                 picboxin.addClass('picboxinbig');
                 picboxin.removeClass('picboxinsmall');
+                imgs.addClass('imgclassbig');
+                imgs.removeClass('imgclasssmall');
                 
                 
                 
