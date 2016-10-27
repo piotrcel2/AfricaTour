@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
     
+    
     var logo = $('.logo');
     var headerout = $('.headerout');
     var breaksection = $('.breaksection');
@@ -13,12 +14,88 @@ $(document).ready(function () {
     var countrylist = $('.countrylist');
     var picboxout = $('.picboxout');
     var picboxin = $('.picboxin');
-    var imgs = $('.imgclass');
     var countryname = $('.countryelement');
+    var prevbutton = $('#prev');
+    var nextbutton = $('#next');
     
-    var countryindex = 0;
-    var pictureindex = 0;
+    var countryindex = 1;
+    var pictureindex = 1;
+    
+    var pictureblocks = $('.picboxin ul');
+    
+    //console.log(pictureblocks[0]);
+    //console.log(pictureblocks[5]);
+    
+    
+    
+    pictureblocks.each(function (index,value){      //dzięki temu dublujemy pierwszy i ostatni element na koniec i początek listy- dla slidera
+        
+        var firstelementtoclone = $(this).children().first().clone();
+        var lastelementtoclone = $(this).children().last().clone();
+        
+        $(this).append(firstelementtoclone);
+        $(this).prepend(lastelementtoclone);
+        
+    })
+    
+    var pictureblocks = $('.picboxin ul'); // odświeżenie list obrazków
+    
+    var imgs = $('.imgclass');  //odświeżenie obrazków
+    
 
+    
+    function setwidth (){
+        
+        $('.picboxin ul').css('width', picboxin.innerWidth()*6);
+        
+    }
+    
+    setwidth(); // być może wykonywać przy każdym resize???
+    
+    
+    //picboxin.innerWidth() - faktyczna szerokość obrazka
+    
+    
+    
+    
+    
+    prevbutton.on('click', function(){
+        
+        console.log('elo');
+        
+    });
+    
+    nextbutton.on('click', function(){
+        
+        console.log('elo');
+        
+    });
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     function match_media_with_listener() {
 
         var mq = window.matchMedia("(max-width: 768px)");
@@ -89,7 +166,6 @@ $(document).ready(function () {
                 picboxin.removeClass('picboxinsmall');
                 imgs.addClass('imgclassbig');
                 imgs.removeClass('imgclasssmall');
-                
                 
                 
                 
