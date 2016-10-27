@@ -289,7 +289,7 @@ body {
 
 .countrylist {
     background-color: rgba(5, 0, 1, 0.5);
-    border-radius: 3px;
+    border-radius: 5px;
     
     ul {
         list-style-type: none;
@@ -314,6 +314,7 @@ body {
 .countrylistsmall {
     
     margin-bottom: 10px;
+    max-width: 85%;
     
     ul {
         
@@ -321,8 +322,7 @@ body {
             
             display: inline-block;
             color: $color4;
-            font-size: 16px;
-            
+            font-size: 16px;       
         }
     }
 }
@@ -343,8 +343,8 @@ body {
                 
                 background-color: $color3;
                 height: 1px;
-                width: 100%;
-                transform: translate(-200px, 0px);
+                width: 110%;
+                transform: translate(-220px, 0px);
                 transition: 0.5s;  
             }
             
@@ -352,7 +352,7 @@ body {
         
                 
                 div {
-                    transform: translate(0px, 0px);
+                    transform: translate(-10px, 0px);
                 }
              
                 
@@ -368,19 +368,12 @@ body {
 
 
 
-
-
-
-
-
 .picboxout {
-    width:640px;
+    
+    background-color: rgba(5, 0, 1, 0.5);
     max-width: 100%;
-    height:100px;
-    background-color: forestgreen;
-    border: 2px solid black;
-    border-radius: 3px;
-    overflow: hidden;
+    border: 5px solid rgba(5, 0, 1, 0.5);
+    border-radius: 5px;
 }
 
 
@@ -398,13 +391,11 @@ body {
 
 
 
+
 .pickboxin {
     
     
-    
 }
-
-
 
 .picboxinsmall {
     
@@ -445,8 +436,29 @@ body {
 
 
 
-.pickboxnav {
+
+
+.picboxnav {
     
+    display: flex;
+    justify-content: space-around;
+    
+    div {
+     
+        color: $color3;
+        font-size: 24px;
+        font-weight: bold;
+        padding-left: 50px;
+        padding-right: 50px;
+        cursor: pointer;
+        
+        &:hover {
+            
+            color: $color2;
+            
+        }
+        
+    }
     
 }
 

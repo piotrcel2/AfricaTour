@@ -15,6 +15,9 @@ $(document).ready(function () {
     var picboxin = $('.picboxin');
     var imgs = $('.imgclass');
     var countryname = $('.countryelement');
+    
+    var countryindex = 0;
+    var pictureindex = 0;
 
     function match_media_with_listener() {
 
