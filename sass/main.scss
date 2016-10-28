@@ -226,6 +226,7 @@ body {
     background-repeat: repeat-x;
     position: fixed;
     width: 100%;
+    z-index: 900;
     
 }
 
@@ -241,6 +242,8 @@ body {
 
 .breakline {
     
+    
+    z-index: 900;
     width: 100%;
     position: fixed;
     background-image:
@@ -602,6 +605,10 @@ a:active {
 }
 
 
+header {
+    
+    z-index: 900;
+}
 
 
 
