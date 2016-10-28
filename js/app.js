@@ -2,8 +2,6 @@ $(document).ready(function () {
 
     var klikacz = $('#klikacz'); // do usunięcia!
     
-    var alldoc = $('body');
-    
     var logo = $('.logo');
     var headerout = $('.headerout');
     var breaksection = $('.breaksection');
@@ -20,7 +18,7 @@ $(document).ready(function () {
     var prevbutton = $('#prev');
     var nextbutton = $('#next');
     
-    var countryindex = 0;
+    var countryindex = Math.floor((Math.random() * 5));;
     var pictureindex = 1;
     
     var pictureblocks = $('.picboxin ul');
