@@ -1,7 +1,5 @@
 $(document).ready(function () {
 
-    var klikacz = $('#klikacz'); // do usunięcia!
-    
     var logo = $('.logo');
     var headerout = $('.headerout');
     var breaksection = $('.breaksection');
@@ -57,11 +55,6 @@ $(document).ready(function () {
     
     
     
-    klikacz.on('click', function(){     // do usunięcia!!
-        
-        console.log(pictureindex);
-    });
-    
     
     
     function setwidth (){
@@ -84,26 +77,44 @@ $(document).ready(function () {
         
     }
     
-    
-    function setpositionwithmove (){    //animacja przesuwania listy
-        
-        
-        
-    }
-    
-    
 
-    
-    
     
     
     prevbutton.on('click', function(){              //PRZYCISK prev!!!!
         
+        if ( pictureindex > 1){
+            
+            pictureindex -= 1;
+            pictureblocks.animate({right: imgwidth * pictureindex}, 100);
+            
+        } else {
+            
+            pictureindex -= 1;
+            pictureblocks.animate({right: imgwidth * pictureindex}, 100, function(){
+                pictureindex = 4;
+                setposition();
+            });
+        }
  
     });
     
     nextbutton.on('click', function(){              //PRZYCISKI next!!!!
 
+        
+        if ( pictureindex < 4){
+            
+            pictureindex += 1;
+            pictureblocks.animate({right: imgwidth * pictureindex}, 100);
+            
+        } else {
+            
+            pictureindex += 1;
+            pictureblocks.animate({right: imgwidth * pictureindex}, 100, function(){
+                pictureindex = 1;
+                setposition();
+            });
+        }
+        
         
     });
     
