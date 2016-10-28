@@ -12,14 +12,15 @@ $(document).ready(function () {
     var breakline = $('.breakline');
     var section1 = $('.section1');
     var countrylist = $('.countrylist');
+    var countryname = $('.countryelement');
     var picboxout = $('.picboxout');
     var picboxin = $('.picboxin');
-    var countryname = $('.countryelement');
     var prevbutton = $('#prev');
     var nextbutton = $('#next');
+    var imgwidth;
     
-    var countryindex = Math.floor((Math.random() * 5));;
-    var pictureindex = 1;
+    var countryindex = Math.floor((Math.random() * 5)); //losowanie od 0 do 5 (1-6) pierwszego wyświetlonego kraju
+    var pictureindex = Math.floor((Math.random() * 4) + 1); //losowanie od 1 do 4 (indeksy 0-5 dla nieskonczonego slidera)
     
     var pictureblocks = $('.picboxin ul');
     
@@ -30,7 +31,7 @@ $(document).ready(function () {
         //poza nadaniem szerokości bloku- ustaw też nową pozycję dla danej rozdzielczości
     })
     
-    setnewpicture(); // wywołanie na początek pierwszego obrazka
+    setnewcountry(); // wywołanie na początek pierwszego obrazka
 
     
     
@@ -58,7 +59,7 @@ $(document).ready(function () {
     
     klikacz.on('click', function(){     // do usunięcia!!
         
-        setwidth();
+        console.log(imgwidth);
     });
     
     
@@ -68,29 +69,29 @@ $(document).ready(function () {
         var newimg = $('.shown .imgclass');     //dla wywołania szerokości wyświetlonych w danym momencie elementów!!
         
         pictureblocks.css('width', newimg.width()*6);
+        imgwidth = newimg.width();
+        
     }
     
     setwidth(); // wykonywane również przy każdym resize
     
     
     
+    function setposition (){            //nadanie pozycji listy błyskawicznie
+        
+        
+        
+    }
     
     
+    function setpositionwithmove (){    //animacja przesuwania listy
+        
+        
+        
+    }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     
     
@@ -114,7 +115,7 @@ $(document).ready(function () {
            
            if ( $(this).data('index') != countryindex ){
                countryindex = $(this).data('index');
-               setnewpicture();
+               setnewcountry();
                
            } else {
                
@@ -128,14 +129,14 @@ $(document).ready(function () {
     
     
     
-    function setnewpicture(){
+    function setnewcountry(){
         
-    
         pictureblocks.removeClass('shown');
         pictureblocks.addClass('hidden');
         $(pictureblocks[countryindex]).removeClass('hidden');
         $(pictureblocks[countryindex]).addClass('shown');
-   
+        countryname.css('color', '#967c61');
+        $(countryname[countryindex]).css('color', 'white');
         
     }
     
