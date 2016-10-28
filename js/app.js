@@ -59,7 +59,7 @@ $(document).ready(function () {
     
     klikacz.on('click', function(){     // do usunięcia!!
         
-        console.log(imgwidth);
+        console.log(pictureindex);
     });
     
     
@@ -70,6 +70,7 @@ $(document).ready(function () {
         
         pictureblocks.css('width', newimg.width()*6);
         imgwidth = newimg.width();
+        setposition();
         
     }
     
@@ -79,7 +80,7 @@ $(document).ready(function () {
     
     function setposition (){            //nadanie pozycji listy błyskawicznie
         
-        
+        pictureblocks.animate({right: imgwidth * pictureindex}, 0);
         
     }
     
@@ -114,7 +115,9 @@ $(document).ready(function () {
        $(this).on('click', function(){
            
            if ( $(this).data('index') != countryindex ){
+               pictureindex = Math.floor((Math.random() * 4) + 1);
                countryindex = $(this).data('index');
+               
                setnewcountry();
                
            } else {
@@ -137,6 +140,7 @@ $(document).ready(function () {
         $(pictureblocks[countryindex]).addClass('shown');
         countryname.css('color', '#967c61');
         $(countryname[countryindex]).css('color', 'white');
+        setposition();
         
     }
     
