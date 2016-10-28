@@ -1,6 +1,8 @@
 $(document).ready(function () {
 
-    var klikacz = $('#klikacz');
+    var klikacz = $('#klikacz'); // do usunięcia!
+    
+    var alldoc = $('body');
     
     var logo = $('.logo');
     var headerout = $('.headerout');
@@ -23,8 +25,15 @@ $(document).ready(function () {
     
     var pictureblocks = $('.picboxin ul');
     
-    //console.log(pictureblocks[0]);
-    //console.log(pictureblocks[5]);
+    
+    $(window).resize(function(){        //resize okna na bieżąco 
+      
+        setwidth();
+        //poza nadaniem szerokości bloku- ustaw też nową pozycję dla danej rozdzielczości
+    })
+    
+    setnewpicture(); // wywołanie na początek pierwszego obrazka
+
     
     
     
@@ -38,22 +47,51 @@ $(document).ready(function () {
         
     })
     
+    var imgs = $('.imgclass');  //odświeżenie obrazków
     var pictureblocks = $('.picboxin ul'); // odświeżenie list obrazków
     
-    var imgs = $('.imgclass');  //odświeżenie obrazków
     
 
     
+    
+    
+    
+    
+    
+    klikacz.on('click', function(){     // do usunięcia!!
+        
+        
+    });
+    
+    
+    
     function setwidth (){
         
-        $('.picboxin ul').css('width', picboxin.innerWidth()*6);
+        console.log("wywołanie nowej szerokości bloków");
         
+        pictureblocks.css('width', imgs.width()*6);
     }
     
-    setwidth(); // być może wykonywać przy każdym resize???
+    setwidth(); // wykonywane również przy każdym resize
     
     
-    //picboxin.innerWidth() - faktyczna szerokość obrazka
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -61,25 +99,13 @@ $(document).ready(function () {
     
     prevbutton.on('click', function(){              //PRZYCISK prev!!!!
         
-        
-        
-        
-        
-        
+ 
     });
     
     nextbutton.on('click', function(){              //PRZYCISKI next!!!!
-        
-        
-        
-        
+
         
     });
-    
-    
-    
-    
-    
     
     
     
@@ -104,43 +130,18 @@ $(document).ready(function () {
     
     
     
-    
-    
     function setnewpicture(){
         
-        
-        console.log("nowy index to " + countryindex);
-        
+    
         pictureblocks.removeClass('shown');
         pictureblocks.addClass('hidden');
         $(pictureblocks[countryindex]).addClass('shown');
-        
-       
-        
+   
         
     }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    klikacz.on('click', function(){     // do usunięcia!!
-        
-        console.log(countryindex);
-        
-    });
-    
-    
-    
-    
-    
+
     
     
     function match_media_with_listener() {
@@ -152,7 +153,6 @@ $(document).ready(function () {
 
 
         function WidthChange(mediaQuery) {
-
 
             if (mediaQuery.matches) {
                 
