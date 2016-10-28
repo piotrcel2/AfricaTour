@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    
+    var klikacz = $('#klikacz');
     
     var logo = $('.logo');
     var headerout = $('.headerout');
@@ -18,7 +18,7 @@ $(document).ready(function () {
     var prevbutton = $('#prev');
     var nextbutton = $('#next');
     
-    var countryindex = 1;
+    var countryindex = 0;
     var pictureindex = 1;
     
     var pictureblocks = $('.picboxin ul');
@@ -59,18 +59,66 @@ $(document).ready(function () {
     
     
     
-    prevbutton.on('click', function(){
+    prevbutton.on('click', function(){              //PRZYCISK prev!!!!
         
-        console.log('elo');
         
-    });
-    
-    nextbutton.on('click', function(){
         
-        console.log('elo');
+        
+        
         
     });
     
+    nextbutton.on('click', function(){              //PRZYCISKI next!!!!
+        
+        
+        
+        
+        
+    });
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    countryname.each(function (index,value0){       //PRZYCISKI WYBORU PAŃSTW!!!!
+        
+       $(this).on('click', function(){
+           
+           if ( $(this).data('index') != countryindex ){
+               countryindex = $(this).data('index');
+               setnewpicture();
+               
+           } else {
+               
+               //brak akcji, bo index tego państwa był już wybrany
+           }
+                  
+       });
+         
+    });
+    
+    
+    
+    
+    
+    
+    function setnewpicture(){
+        
+        
+        console.log("nowy index to " + countryindex);
+        
+        pictureblocks.removeClass('shown');
+        pictureblocks.addClass('hidden');
+        $(pictureblocks[countryindex]).addClass('shown');
+        
+       
+        
+        
+    }
     
     
     
@@ -83,12 +131,11 @@ $(document).ready(function () {
     
     
     
-    
-    
-    
-    
-    
-    
+    klikacz.on('click', function(){     // do usunięcia!!
+        
+        console.log(countryindex);
+        
+    });
     
     
     
