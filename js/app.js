@@ -58,16 +58,16 @@ $(document).ready(function () {
     
     klikacz.on('click', function(){     // do usunięcia!!
         
-        
+        setwidth();
     });
     
     
     
     function setwidth (){
         
-        console.log("wywołanie nowej szerokości bloków");
+        var newimg = $('.shown .imgclass');     //dla wywołania szerokości wyświetlonych w danym momencie elementów!!
         
-        pictureblocks.css('width', imgs.width()*6);
+        pictureblocks.css('width', newimg.width()*6);
     }
     
     setwidth(); // wykonywane również przy każdym resize
@@ -133,6 +133,7 @@ $(document).ready(function () {
     
         pictureblocks.removeClass('shown');
         pictureblocks.addClass('hidden');
+        $(pictureblocks[countryindex]).removeClass('hidden');
         $(pictureblocks[countryindex]).addClass('shown');
    
         
