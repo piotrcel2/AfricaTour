@@ -9,12 +9,14 @@ $(document).ready(function () {
     var navaltlist = $('.navaltlist');
     var breakline = $('.breakline');
     var section1 = $('.section1');
+    var section2 = $('.section2');
     var countrylist = $('.countrylist');
     var countryname = $('.countryelement');
     var picboxout = $('.picboxout');
     var picboxin = $('.picboxin');
     var prevbutton = $('#prev');
     var nextbutton = $('#next');
+    var offerbox = $('.offerbox');
     var imgwidth;
     
     var countryindex = Math.floor((Math.random() * 5)); //losowanie od 0 do 5 (1-6) pierwszego wyświetlonego kraju
@@ -98,6 +100,7 @@ $(document).ready(function () {
  
     });
     
+    
     nextbutton.on('click', function(){              //PRZYCISKI next!!!!
 
         
@@ -143,15 +146,24 @@ $(document).ready(function () {
     
     
     
-    function setnewcountry(){
+    function setnewcountry(){ // nadanie nowego państwa
+        
+        
+        section2.children().removeClass('shown');
+        section2.children().addClass('hidden');
+        $(section2.children()[countryindex]).removeClass('hidden');
+        $(section2.children()[countryindex]).addClass('shown');         //działania na opisach
+        $(section2.children().last()).removeClass('hidden');            //zapobiega znikaniu offerboxa
         
         pictureblocks.removeClass('shown');
         pictureblocks.addClass('hidden');
         $(pictureblocks[countryindex]).removeClass('hidden');
-        $(pictureblocks[countryindex]).addClass('shown');
+        $(pictureblocks[countryindex]).addClass('shown');               //działania na blokach
+        
         countryname.css('color', '#967c61');
-        $(countryname[countryindex]).css('color', 'white');
-        setposition();
+        $(countryname[countryindex]).css('color', 'white');             //podświetlenie wybranego państwa
+        
+        setposition();                                                  //błyskawiczne odświeżenie pozycji
         
     }
     
@@ -189,6 +201,8 @@ $(document).ready(function () {
                 breakline.removeClass('breaklinebig');
                 section1.addClass('section1small');
                 section1.removeClass('section1big');
+                section2.addClass('section2small');
+                section2.removeClass('section2big');
                 countrylist.addClass('countrylistsmall');
                 countrylist.removeClass('countrylistbig');
                 picboxout.addClass('picboxoutsmall');
@@ -197,6 +211,8 @@ $(document).ready(function () {
                 picboxin.removeClass('picboxinbig');
                 imgs.addClass('imgclasssmall');
                 imgs.removeClass('imgclassbig');
+                offerbox.addClass('offerboxsmall');
+                offerbox.removeClass('offerboxbig');
                 
             } else {
                 
@@ -220,6 +236,8 @@ $(document).ready(function () {
                 breakline.removeClass('breaklinesmall');
                 section1.addClass('section1big');
                 section1.removeClass('section1small');
+                section2.addClass('section2big');
+                section2.removeClass('section2small');
                 countrylist.addClass('countrylistbig');
                 countrylist.removeClass('countrylistsmall');
                 picboxout.addClass('picboxoutbig');
@@ -228,6 +246,8 @@ $(document).ready(function () {
                 picboxin.removeClass('picboxinsmall');
                 imgs.addClass('imgclassbig');
                 imgs.removeClass('imgclasssmall');
+                offerbox.addClass('offerboxbig');
+                offerbox.removeClass('offerboxsmall');
                 
                 
                 

@@ -506,7 +506,77 @@ body {
 
 
 
+.section2 {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    p {
+        
+        border-radius: 5px;
+        max-width: 86%;
+        padding: 10px;
+        background-color: rgba(5, 0, 1, 0.5);
+    }
+   
+}
 
+.section2small {
+    
+    margin-top: 12px;
+    
+}
+
+.section2big {
+    
+    margin-top: 24px;
+    
+}
+
+@keyframes animation1{
+    0% {
+        border: 1px solid $color6;
+    }
+    50% {
+        border: 1px solid $color4;
+    }
+    100% {
+        border: 1px solid $color6;
+    }
+
+    
+}
+
+
+.offerbox {
+    
+    color: $color3;
+    background-color: rgba(5, 0, 1, 0.5);
+    border-radius: 5px;
+    border: 1px solid $color6;
+}
+
+.offerboxsmall {
+    
+    padding: 12px;
+    margin-top: 12px;
+}
+
+.offerboxbig {
+    
+    padding: 24px;
+    margin-top: 24px;
+    
+    &:hover {
+        
+        cursor: pointer;
+        animation-name: animation1;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+    }
+}
 
 
 
@@ -538,3 +608,4 @@ a:active {
 fa-bars {
     color: $color2;
 }
+
