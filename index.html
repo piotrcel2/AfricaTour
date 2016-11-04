@@ -250,7 +250,7 @@
         
         
         <div class="sec3divA">
-            <h2>O nas</h2>
+            <h2><i class="fa fa-users" aria-hidden="true"></i> O nas</h2>
         </div>
         
         
@@ -269,7 +269,7 @@
     <section class="section4 section4small container"> <!-- sekcja 'biura' -->
         
         <div class="sec4divA">
-            <h2>Biura</h2>
+            <h2><i class="fa fa-handshake-o" aria-hidden="true"></i> Biura</h2>
         </div>
         
         
@@ -289,7 +289,7 @@
         </div>
         
         <div class="sec4divAaside">
-            <h2>Biura</h2>
+            <h2><i class="fa fa-handshake-o" aria-hidden="true"></i> Biura</h2>
         </div>
         
 
@@ -301,38 +301,45 @@
     
     <section class="section5 section5small container"> <!-- sekcja 'kontakt' - formularze -->
         
+        <div class="sec5divA">
+            <h2><i class="fa fa-envelope-open-o" aria-hidden="true"></i> Kontakt</h2>
+        </div>
        
-           
+        <div class="sec5divB">
+            <form method="post" action="http://lechia.pl">
+                <label>
+                    <p>Imię:</p>
+                    <input type="text" name="name" class="nameinput">
+
+                </label>
+
+                <label>
+                    <p>E-mail:</p>
+                    <input type="email" name="email" class="emailinput">
+
+                </label>
+
+                <label>
+                    
+                    <p>Wiadomość:</p>
+                    <textarea type="text" name="message" class="msginput"></textarea>
+
+                </label>
+                <br>
+                <input type="submit" value="Wyślij" class="sendinput">
+                
+                <div class="error"></div>
+                
+            </form>
             
-        <!--     
-         <form>
-            
-            <label>
+        </div>
+       
+    </section>  
 
-                <input type="text" name="name" placeholder="Imię"  class="">
-
-            </label>
-
-            <label>
-
-                <input type="email" name="email"  placeholder="email"  class="">
-
-            </label>
-            
-            <label>
-
-                <textarea type="text" name="message" class="" placeholder="Wiadomość"></textarea>
-
-            </label>
-
-        </form>
-        -->
-    </section>
     
-    
-    <footer>
-
-
+    <footer class="footersmall">
+        <div id="footerbreak"></div>
+        <div id="footermain"></div>
 
 
 

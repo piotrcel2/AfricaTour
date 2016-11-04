@@ -22,6 +22,15 @@ $(document).ready(function () {
     var prevbutton = $('#prev');
     var nextbutton = $('#next');
     var offerbox = $('.offerbox');
+    var footer = $('footer');
+    
+    var form = $('form');
+    var inputname = $('.nameinput');
+    var inputmail = $('.emailinput');
+    var inputmessage = $('.msginput');
+    var errorbox = $('.error');
+    var submitbutton = $('.sendinput');
+    
     var imgwidth;
     
     var countryindex = Math.floor((Math.random() * 5)); //losowanie od 0 do 5 (1-6) pierwszego wyświetlonego kraju
@@ -226,6 +235,8 @@ $(document).ready(function () {
                 imgs.removeClass('imgclassbig');
                 offerbox.addClass('offerboxsmall');
                 offerbox.removeClass('offerboxbig');
+                footer.addClass('footersmall');
+                footer.removeClass('footerbig');
                 
                 
             } else {
@@ -270,6 +281,8 @@ $(document).ready(function () {
                 imgs.removeClass('imgclasssmall');
                 offerbox.addClass('offerboxbig');
                 offerbox.removeClass('offerboxsmall');
+                footer.addClass('footerbig');
+                footer.removeClass('footersmall');
                 
                 
                 
@@ -290,6 +303,60 @@ $(document).ready(function () {
         navaltlist.toggleClass('shown');
     })
 
+    
+    form.on("submit", function(e) {
+        
+        var insertname = inputname.val();
+        var insertmail = inputmail.val();
+        var insertmessage = inputmessage.val();
+        
+        var checkmailbug1 = insertmail.search('@');
+        var checkmailbug2 = insertmail.search('.');
+        
+        if (insertname.length < 3){
+            
+            e.preventDefault();
+            
+            var errorname = 'Imię musi zawierać minimum 3 znaki';
+            
+            errorbox.empty();
+            errorbox.append(errorname);
+            
+        } else if ( checkmailbug2 == -1) {
+            
+            e.preventDefault();
+            
+            var errorname = 'Podany e-mail jest nieprawidłowy';
+            
+            errorbox.empty();
+            errorbox.append(errorname); 
+            
+        } else if ( checkmailbug1 == -1) {
+            
+            e.preventDefault();
+            
+            var errorname = 'Podany e-mail jest nieprawidłowy';
+            
+            errorbox.empty();
+            errorbox.append(errorname); 
+            
+        } else if ( insertmessage.length < 10){
+            
+            e.preventDefault();
+            
+            var errorname = 'Wiadomość musi mieć minimum 10 znaków';
+            
+            errorbox.empty();
+            errorbox.append(errorname); 
+            
+        } else {
+            
+            errorbox.empty();
+            //tu powinno przejsc dalej
+            
+        }
+    });
+    
     
     
     
