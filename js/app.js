@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+    
     var logo = $('.logo');
     var headerout = $('.headerout');
     var breaksection = $('.breaksection');
@@ -10,6 +11,10 @@ $(document).ready(function () {
     var breakline = $('.breakline');
     var section1 = $('.section1');
     var section2 = $('.section2');
+    var section3 = $('.section3');
+    var section4 = $('.section4');
+    var section5 = $('.section5');
+    var quotesection = $('.quotesection');
     var countrylist = $('.countrylist');
     var countryname = $('.countryelement');
     var picboxout = $('.picboxout');
@@ -37,7 +42,7 @@ $(document).ready(function () {
     
     
     pictureblocks.each(function (index,value){      //dzięki temu dublujemy pierwszy i ostatni element na koniec i początek listy- dla slidera
-        
+                                                    //równie dobrze można to zrobić w htmlu
         var firstelementtoclone = $(this).children().first().clone();
         var lastelementtoclone = $(this).children().last().clone();
         
@@ -46,8 +51,8 @@ $(document).ready(function () {
         
     })
     
-    var imgs = $('.imgclass');  //odświeżenie obrazków
-    var pictureblocks = $('.picboxin ul'); // odświeżenie list obrazków
+    var imgs = $('.imgclass');  //lokalizacja wszystkich obrazków po ich zapętleniu
+    pictureblocks = $('.picboxin ul'); // odświeżenie list obrazków -- czy to potrzebne??
     
     
 
@@ -59,17 +64,18 @@ $(document).ready(function () {
     
     
     
-    function setwidth (){
+    function setwidth (){                       // funkcja określająca szerokość bloków z obrazkami - dla responsywności
         
-        var newimg = $('.shown .imgclass');     //dla wywołania szerokości wyświetlonych w danym momencie elementów!!
+        var newimg = $('.shown .imgclass');     // dla wywołania szerokości wyświetlonych w danym momencie elementów!!
+                                                // dla elementów hidden- byłoby to 0 nawet przy ustalonej szerokości
         
         pictureblocks.css('width', newimg.width()*6);
-        imgwidth = newimg.width();
+        imgwidth = newimg.width();              // ustalenie szerokości jednego obrazka- służy obliczaniu przewijania
         setposition();
         
     }
     
-    setwidth(); // wykonywane również przy każdym resize
+    setwidth(); // wykonywane również przy każdym resize, tu jednorazowo przy wyświetleniu strony
     
     
     
@@ -101,7 +107,7 @@ $(document).ready(function () {
     });
     
     
-    nextbutton.on('click', function(){              //PRZYCISKI next!!!!
+    nextbutton.on('click', function(){              //PRZYCISK next!!!!
 
         
         if ( pictureindex < 4){
@@ -128,15 +134,12 @@ $(document).ready(function () {
         
        $(this).on('click', function(){
            
-           if ( $(this).data('index') != countryindex ){
+           if ( $(this).data('index') != countryindex ){    // działa tylko wtedy gdy klikamy na niewybrane państwo
                pictureindex = Math.floor((Math.random() * 4) + 1);
                countryindex = $(this).data('index');
                
                setnewcountry();
                
-           } else {
-               
-               //brak akcji, bo index tego państwa był już wybrany
            }
                   
        });
@@ -146,19 +149,21 @@ $(document).ready(function () {
     
     
     
-    function setnewcountry(){ // nadanie nowego państwa
+    function setnewcountry(){ // nadanie nowego państwa do wyświetlenia
         
         
         section2.children().removeClass('shown');
         section2.children().addClass('hidden');
         $(section2.children()[countryindex]).removeClass('hidden');
         $(section2.children()[countryindex]).addClass('shown');         //działania na opisach
-        $(section2.children().last()).removeClass('hidden');            //zapobiega znikaniu offerboxa
+        
+        $(section2.children().last()).removeClass('hidden');            //zapobiega znikaniu offerboxa(jest na tej samej liście)
+        
         
         pictureblocks.removeClass('shown');
         pictureblocks.addClass('hidden');
         $(pictureblocks[countryindex]).removeClass('hidden');
-        $(pictureblocks[countryindex]).addClass('shown');               //działania na blokach
+        $(pictureblocks[countryindex]).addClass('shown');               //działania na blokach zdjęć
         
         countryname.css('color', '#967c61');
         $(countryname[countryindex]).css('color', 'white');             //podświetlenie wybranego państwa
@@ -171,7 +176,7 @@ $(document).ready(function () {
 
     
     
-    function match_media_with_listener() {
+    function match_media_with_listener() {              //funkcja odpowiadająca za responsywność
 
         var mq = window.matchMedia("(max-width: 768px)");
 
@@ -203,6 +208,14 @@ $(document).ready(function () {
                 section1.removeClass('section1big');
                 section2.addClass('section2small');
                 section2.removeClass('section2big');
+                section3.addClass('section3small');
+                section3.removeClass('section3big');
+                section4.addClass('section4small');
+                section4.removeClass('section4big');
+                section5.addClass('section5small');
+                section5.removeClass('section5big');
+                quotesection.addClass('quotesectionsmall');
+                quotesection.removeClass('quotesectionbig');
                 countrylist.addClass('countrylistsmall');
                 countrylist.removeClass('countrylistbig');
                 picboxout.addClass('picboxoutsmall');
@@ -213,6 +226,7 @@ $(document).ready(function () {
                 imgs.removeClass('imgclassbig');
                 offerbox.addClass('offerboxsmall');
                 offerbox.removeClass('offerboxbig');
+                
                 
             } else {
                 
@@ -238,6 +252,14 @@ $(document).ready(function () {
                 section1.removeClass('section1small');
                 section2.addClass('section2big');
                 section2.removeClass('section2small');
+                section3.addClass('section3big');
+                section3.removeClass('section3small');
+                section4.addClass('section4big');
+                section4.removeClass('section4small');
+                section5.addClass('section5big');
+                section5.removeClass('section5small');
+                quotesection.addClass('quotesectionbig');
+                quotesection.removeClass('quotesectionsmall');
                 countrylist.addClass('countrylistbig');
                 countrylist.removeClass('countrylistsmall');
                 picboxout.addClass('picboxoutbig');
@@ -260,7 +282,9 @@ $(document).ready(function () {
 
     match_media_with_listener();
 
-    navbutton.on('click', function(){
+    
+    
+    navbutton.on('click', function(){           //odpowiada za wyśw./chow. submenu dla małego ekranu
         
         navaltlist.toggleClass('hidden');
         navaltlist.toggleClass('shown');

@@ -529,12 +529,14 @@ body {
 .section2small {
     
     margin-top: 12px;
+    margin-bottom: 42px;
     
 }
 
 .section2big {
     
     margin-top: 24px;
+    margin-bottom: 84px;
     
 }
 
@@ -582,6 +584,296 @@ body {
 }
 
 
+.quotesection {
+	display: flex;
+    justify-content: center;
+    max-width: 80%;
+    
+    div {
+        
+        background-color: rgba(5, 0, 1, 0.5);
+        padding: 24px;
+        transform: skew(-15deg, 0);
+        
+        #quote {
+            
+        font-size: 18px;
+        }
+        
+        #quoteauthor {
+            
+            text-align: right;
+            transform: skew(15deg, 0);
+            
+        }
+    }
+    
+}
+
+.quotesectionsmall {
+	
+    margin-bottom: 42px;
+}
+
+.quotesectionbig {
+    
+    margin-bottom: 84px;
+    
+}
+
+
+
+
+
+
+.section3 {
+    
+    display: flex;
+    
+    
+    .sec3divA {
+        
+        color: $color3;
+        min-width: 200px;
+        
+        h2 {
+        
+        }
+        
+    }
+    
+    .sec3divB {
+        
+        
+        p {
+        
+        border-radius: 5px;
+        padding: 10px;
+        background-color: rgba(5, 0, 1, 0.5);
+        text-indent: 24px;
+            
+        }
+        
+    }
+    
+    
+}
+
+
+.section3small {
+    
+    flex-direction: column;
+    margin-bottom: 42px;
+    
+    .sec3divA {
+        
+        margin-left: 6px;
+        margin-right: 6px;
+        border-bottom: 4px solid $color4;
+        margin-bottom: 12px;
+        
+        h2 {
+            
+            font-size: 26px;
+
+        }
+    }
+    
+    .sec3divB {
+	
+        margin-right: 6px;
+        margin-left: 6px;
+        
+        p {
+            
+            
+        }
+        
+        
+    }
+    
+    
+}
+
+
+.section3big {
+    
+    margin-bottom: 84px;
+    
+    .sec3divA {
+        
+        margin-left: 12px;
+        border-right: 6px solid $color4;
+        margin-right: 12px;
+        
+        h2 {
+            font-size: 32px;
+            
+        }
+        
+    }
+    
+    .sec3divB {
+	
+        margin-right: 12px;
+        
+        p {
+            
+            
+        }
+        
+        
+    }
+    
+    
+}
+
+
+
+
+
+
+.section4 {
+    
+    display: flex;
+    
+    .sec4divB {
+      
+        p {
+            border-radius: 5px;
+            padding: 10px;
+            background-color: rgba(5, 0, 1, 0.5);
+            margin-top:12px;
+            margin-bottom: 12px;
+        }
+        
+    }
+    
+}
+
+
+.section4small {
+    
+    flex-direction: column;
+    margin-bottom: 42px;
+    
+    .sec4divA {
+        
+        margin-left: 6px;
+        margin-right: 6px;
+        border-bottom: 4px solid $color4;
+        margin-bottom: 12px;
+        color: $color3;
+        
+        h2 {
+            
+            font-size: 26px;
+
+        }
+    }
+    
+    .sec4divB {
+	
+        margin-right: 6px;
+        margin-left: 6px;
+        
+        
+        
+        
+    }
+    
+    .sec4divAaside {
+	
+        display: none;
+        
+    }
+    
+    
+}
+
+
+.section4big {
+    
+    margin-bottom: 84px;
+    
+    .sec4divA {
+        
+        display: none;
+        
+    }
+    
+    .sec4divB {
+	
+        margin-left: 12px;
+        width: 100%;
+  
+        
+    }
+    
+    
+    .sec4divAaside {
+	
+        margin-left: 12px;
+        border-left: 6px solid $color4;
+        margin-right: 12px;
+        min-width: 200px;
+        color: $color3;
+        display: flex;
+        justify-content: flex-end;
+        
+        h2 {
+            font-size: 32px;
+        }
+        
+    }
+    
+}
+
+iframe {
+    
+    
+    width: 100%;
+    height: 200px;
+    
+}
+
+
+
+
+
+
+
+
+.section5 {
+    
+    display: flex;
+    
+}
+
+
+.section5small {
+    
+    margin-top: 12px;
+    
+}
+
+
+.section5big {
+    
+    margin-top: 24px;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 p {
@@ -614,5 +906,12 @@ header {
 
 fa-bars {
     color: $color2;
+}
+
+
+label { //zmien to !!
+    
+    display: block;
+    margin-top: 24px;
 }
 
