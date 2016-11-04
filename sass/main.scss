@@ -976,7 +976,8 @@ input, textarea {
 
 footer {
     
-    
+    color: $color4;
+    font-size: 16px;
     
     #footerbreak {
         
@@ -994,6 +995,11 @@ footer {
         background-color: rgba(5, 0, 1, 0.9);
     }
     
+    i {
+        margin-right: 6px;
+        float: right;
+    }
+    
 }
 
 
@@ -1008,16 +1014,45 @@ footer {
 	    height: 24px;
     }
 	
+    i {
+        
+        font-size: 24px;
+    }
 }
 
 .footerbig {
 
     #footerbreak {
-        height: 48px;
+        height: 36px;
     }
     
     #footermain {
-	    height: 48px;
+	    height: 36px;
+    }
+    
+    .fa-facebook-square {
+        
+        font-size: 32px;
+        
+        &:hover {
+            
+            color: #6A5ACD;
+            cursor: pointer;
+            
+        }
+    }
+    
+    .fa-youtube-square {
+        
+        font-size: 32px;
+        
+        
+        &:hover {
+            
+            color: #CD5C5C;
+            cursor: pointer;
+        }
+        
     }
     
 }
