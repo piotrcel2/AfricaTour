@@ -61,7 +61,7 @@ $(document).ready(function () {
     })
     
     var imgs = $('.imgclass');  //lokalizacja wszystkich obrazków po ich zapętleniu
-    pictureblocks = $('.picboxin ul'); // odświeżenie list obrazków -- czy to potrzebne??
+    pictureblocks = $('.picboxin ul'); // odświeżenie list obrazków
     
     
 
@@ -322,16 +322,7 @@ $(document).ready(function () {
             errorbox.empty();
             errorbox.append(errorname);
             
-        } else if ( checkmailbug2 == -1) {
-            
-            e.preventDefault();
-            
-            var errorname = 'Podany e-mail jest nieprawidłowy';
-            
-            errorbox.empty();
-            errorbox.append(errorname); 
-            
-        } else if ( checkmailbug1 == -1) {
+        } else if ( checkmailbug2 == -1 || checkmailbug1 == -1) {
             
             e.preventDefault();
             
